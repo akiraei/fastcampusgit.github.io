@@ -1,0 +1,65 @@
+title: '패스트캠퍼스 기술 블로그'
+email: engineering@fastcampus.co.kr
+description: '인생을 바꾸는 교육! Life-changing Education!'
+url: 'https://fastcampus.dev'
+enforce_ssl: 'fastcampus.dev'
+baseurl: 'https://fastcampus.dev' # 로컬 테스트 시 주석 처리. 배포 시 주석 해제.
+timezone: Asia/Seoul
+date_format: "%Y-%m-%d"
+
+repository: fastcampusgit/fastcampusgit.github.io
+
+permalink: /:year/:month/:day/:title
+
+excerpt_separator: <!--more-->
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+
+paginate: 5
+paginate_path: "/pages/:num/"
+
+exclude:
+  - README.md
+keep_files:
+  - assets
+  - files
+asset_url: /assets
+
+collections:
+  authors:
+    output: true
+    permalink: /authors/:path/
+  tags:
+    output: true
+    permalink: /tags/:path/
+
+defaults:
+  - scope:
+      path: ''
+      type: authors
+    values:
+      layout: author
+  - scope:
+      path: ''
+      type: tags
+    values:
+      layout: tag
+  - scope:
+      path: 'pages'
+    values:
+      layout: page
+      sitemap: true
+
+google_analytics_ua: UA-138245180-1
+google_site_verification: JRUoXq6BWiohGQWgmdy4aHoy6wbAB2HukfHbsNMzQCE
+github_username: fastcampusgit
+twitter_username: fastcampus
+facebook_username: fastcampus
+facebook_app_id: 453198315186493
